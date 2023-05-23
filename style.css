@@ -1,0 +1,15 @@
+.divide:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: calc(100% - 2rem);
+  height: 2px;
+  opacity: 0.25;
+  transform: translateX(-50%);
+  background-color: black;
+}
+
+#queue li * {
+  cursor: pointer;
+}

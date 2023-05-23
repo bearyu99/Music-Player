@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://kit.fontawesome.com/8f896ec8f6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Content Music Player</title>
+  </head>
+  <body class="flex justify-center items-center w-screen h-screen lg:bg-slate-50">
+    <div class="flex p-16 lg:p-8 lg:w-[384px] rounded-3xl lg:shadow-2xl bg-white text-gray-500">
+      <div class="">
+        <div id="thumbnail" class="relative w-full mb-36 lg:mb-8">
+          <img
+            class="relative w-full object-cover aspect-square rounded-3xl lg:rounded-2xl shadow-2xl bg-slate-200 z-10"
+          />
+          <img
+            class="absolute bottom-0 w-full object-cover aspect-square scale-90 translate-y-16 lg:translate-y-8 rounded-3xl lg:rounded-2xl opacity-50 blur-md shadow-xl bg-slate-200 z-0"
+          />
+        </div>
+        <audio></audio>
+        <div id="detail" class="flex items-end gap-3 mb-8 lg:mb-4">
+          <p
+            id="song-title"
+            class="max-w-full lg:max-w-[310px] text-5xl lg:text-xl font-semibold whitespace-nowrap text-ellipsis overflow-hidden"
+          >
+            타이틀
+          </p>
+          <p id="song-artist" class="text-3xl lg:text-sm min-w-fit">작곡가</p>
+        </div>
+        <div id="progress" class="mb-8 lg:mb-2">
+          <div class="flex justify-between text-2xl lg:text-xs">
+            <span id="progress-current">00:00</span>
+            <span id="progress-duration">00:00</span>
+          </div>
+          <div id="progress-bar-wrapper" class="relative pt-2 pb-4 lg:pt-1 lg:pb-2">
+            <div class="h-3 lg:h-1.5 rounded-full bg-gray-100"></div>
+            <div
+              id="progress-bar"
+              class="absolute w-0 h-3 lg:h-1.5 -translate-y-3 lg:-translate-y-1.5 rounded-full bg-gray-300 w-0"
+            ></div>
+          </div>
+        </div>
+        <div class="flex justify-around items-center">
+          <i id="loop" class="fa-solid fa-repeat text-5xl lg:text-xl"></i>
+          <div id="control" class="flex justify-between items-center w-96 lg:w-36">
+            <i id="prev" class="fa-solid fa-backward text-6xl lg:text-2xl"></i>
+            <i id="play" class="fa-solid fa-play text-7xl lg:text-3xl"></i>
+            <i id="next" class="fa-solid fa-forward text-6xl lg:text-2xl"></i>
+          </div>
+          <i id="queue-list" class="fa-solid fa-list-ul text-5xl lg:text-xl"></i>
+        </div>
+      </div>
+      <div class="overflow-y-auto hidden">
+        <ul id="queue" class="lg:max-h-[490px]"></ul>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
