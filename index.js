@@ -90,11 +90,11 @@ function loopSong() {
 
 // 노래, 정보 불러오기
 function loadSong(song) {
-  audio.src = `/assets/audio/${song.name}.wav`;
+  audio.src = `./assets/audio/${song.name}.wav`;
   playingSongTitle.innerHTML = song.title;
   playingSongArtist.innerHTML = song.artist;
   thumb.querySelectorAll("img").forEach((img) => {
-    img.src = `/assets/img/${song.content}.png`;
+    img.src = `./assets/img/${song.content}.png`;
   });
 }
 
@@ -124,7 +124,7 @@ function drawQueue() {
     artistWrapper.appendChild(artist);
 
     const duration = document.createElement("span");
-    let songUrl = `/assets/audio/${song.name}.wav`;
+    let songUrl = `./assets/audio/${song.name}.wav`;
     getDuration(songUrl, duration);
     artistWrapper.appendChild(duration);
 
